@@ -1,0 +1,3 @@
+function endingWith(str,lastChar){
+    
+}
