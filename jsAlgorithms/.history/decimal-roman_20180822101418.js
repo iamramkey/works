@@ -68,16 +68,14 @@ function decimalToRoman(num) {
         romanNumber.push(numeral.concat(romans[i * 2 + 1]));
         break;
       case 5:
-        romanNumber.push(romans[i * 2 + 1]);
+        romanNumber.push(romans[i * 2]);
         break;
       case 6:
-        romanNumber.push(romans[i * 2 + 1] + numeral);
+      
         break;
       case 7:
-        romanNumber.push(romans[i * 2 + 1] + numeral + numeral);
         break;
       case 8:
-        romanNumber.push(romans[i * 2 + 1] + numeral + numeral + numeral);
         break;
       case 9:
         romanNumber.push(romans[i * 2].concat(romans[i * 2 + 2]));

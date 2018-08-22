@@ -44,7 +44,7 @@ function decimalToRoman(num) {
   function units() {
     numeral = romans[i * 2];
     switch (ints[i]) {
-      /* case 1:
+      case 1:
       case 2:
       case 3:
       case 6:
@@ -54,40 +54,16 @@ function decimalToRoman(num) {
         arr.length = ints[i];
         arr.fill(numeral);
         romanNumber.push(arr.toString());
-        break; */
-      case 1:
-        romanNumber.push(numeral);
-        break;
-      case 2:
-        romanNumber.push(numeral + numeral);
-        break;
-      case 3:
-        romanNumber.push(numeral + numeral + numeral);
         break;
       case 4:
         romanNumber.push(numeral.concat(romans[i * 2 + 1]));
         break;
       case 5:
-        romanNumber.push(romans[i * 2 + 1]);
+        romanNumber.push(romans[i * 2]);
         break;
-      case 6:
-        romanNumber.push(romans[i * 2 + 1] + numeral);
-        break;
-      case 7:
-        romanNumber.push(romans[i * 2 + 1] + numeral + numeral);
-        break;
-      case 8:
-        romanNumber.push(romans[i * 2 + 1] + numeral + numeral + numeral);
-        break;
-      case 9:
-        romanNumber.push(romans[i * 2].concat(romans[i * 2 + 2]));
-        break;
+      
     }
   }
-  return romanNumber
-    .reverse()
-    .join("")
-    .toString();
 }
 
 console.log(decimalToRoman(36));
