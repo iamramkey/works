@@ -1,0 +1,56 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  //this defines what 1 rem is
+  font-size: 62.5%; //1rem = 10px
+
+  //if you put the media queries order in decreasing you will be facing issue like in the small devices larger media quries are goint to effect the style
+  //so reversing the order
+
+  @include respond(big-desktop) { // this can be placed any where it is a min-width media query it doesnt effect in small screens
+    font-size: 75%; // 1 rem = 12px; 12/16 = 75
+  }
+  @include respond(tab-land) {
+    font-size: 56.25%; //we need 9px in tablet landscape 9/16 = 56.25
+  }
+  @include respond(tab-port) {
+    font-size: 50%; //1 rem = 8px; 8/16 = 50
+  }
+  @include respond(phone) {
+    font-size: 30%; //
+  }
+}
+
+body {
+  box-sizing: border-box;
+  padding: 3rem;
+
+  @include respond(tab-port){
+    padding: 0;
+  }
+}
+
+/*
+
+many people write media queries like this & mostly beginners will prefer this choice
+
+*/
+
+@media (max-width: 600px) {
+  html {
+  }
+
+  body {
+  }
+}
+
+::selection{
+  background-color: $color-primary;
+  color: $color-white;
+}

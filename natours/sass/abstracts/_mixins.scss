@@ -1,0 +1,75 @@
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+//MEDIA QUERIES MANAGER
+/*
+0 - 600   phone
+600 - 900   tablet potrait
+900 - 1200 table landscape
+1200 - 1800 is where our normal styles apply ( desktop first )
+1800 +    big desktop
+
+em are the best solution to write in the media queries rahter than rem's as there are some browser complaint issues with rems
+
+here em's or rem's are not affected by root font size as in the entire application so here em/rem's will take browser default font size as 1 unit
+
+Order of changing sass files : base + typography > general layout(like header,footer,nav etc.,) + grid > specific   page layout > components
+*/
+
+@mixin respond-phone {
+  // 16px is the default browsers font size so 600/16 = 37.5em
+  @media only screen and (max-width: 37.5em) { //600px
+    @content;
+  }
+}
+
+@mixin respond-tab-port {
+  @media only screen and (max-width: 56.25em) { //900px
+    @content;
+  }
+}
+@mixin respond-tab-land {
+  @media only screen and (max-width: 75em) { //1200px
+    @content;
+  }
+}
+@mixin respond-big-desktop {
+  @media only screen and (min-width: 112.5em) { //1800px
+    @content;
+  }
+}
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @include respond-phone {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-port {
+    @include respond-tab-port {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-land {
+    @include respond-tab-land {
+      @content;
+    }
+  }
+  @if $breakpoint == big-desktop {
+    @include respond-big-desktop {
+      @content;
+    }
+  }
+}
