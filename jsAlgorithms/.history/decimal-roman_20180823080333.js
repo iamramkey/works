@@ -124,24 +124,5 @@ function decimalToRomanAdvanced(num) {
   return finalStr;
 }
 
-function decimalToRoman(num) {
-  var romans = [["I", "V"], ["X", "L"], ["C", "D"], ["M"]];
-  var str = num
-    .toString()
-    .split("")
-    .reverse();
-  var final = "";
-  for (var i = 0; i < str.length; i++) {
-    if (str[i] > 5 && romans[i][1]) {
-      final = romans[i][1] + final;
-      str[i] -= 5;
-    }
-    if (str[i] > 0) {
-      final = romans[i][0].repeat(str[i]) + final;
-    }
-  }
-  return final;
-}
-
 console.log(decimalToRoman(36));
 console.log(decimalToRoman(108));

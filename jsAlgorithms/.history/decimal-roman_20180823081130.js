@@ -133,14 +133,13 @@ function decimalToRoman(num) {
   var final = "";
   for (var i = 0; i < str.length; i++) {
     if (str[i] > 5 && romans[i][1]) {
-      final = romans[i][1] + final;
+      final += romans[i][1];
       str[i] -= 5;
     }
     if (str[i] > 0) {
-      final = romans[i][0].repeat(str[i]) + final;
+      final += romans[i][0].repeat(str[i]);
     }
   }
-  return final;
 }
 
 console.log(decimalToRoman(36));

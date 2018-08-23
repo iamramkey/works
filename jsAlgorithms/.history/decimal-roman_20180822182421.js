@@ -26,7 +26,7 @@ function decimalToRomanBasic(num) {
   return romanStr;
 }
 
-function decimalToRomanIntermediate1(num) {
+function decimalToRoman(num) {
   var romans = ["I", "V", "X", "L", "C", "D", "M"],
     ints = [],
     romanNumber = [],
@@ -42,7 +42,7 @@ function decimalToRomanIntermediate1(num) {
   }
 
   function units() {
-    console.log("i : ", i);
+    console.log('i : ' , i)
     numeral = romans[i * 2];
     switch (ints[i]) {
       /* case 1:
@@ -89,58 +89,6 @@ function decimalToRomanIntermediate1(num) {
     .reverse()
     .join("")
     .toString();
-}
-
-function decimalToRomanAdvanced(num) {
-  var romans = [
-    ["I", "V"], //10^0, 5 * 10^0
-    ["X", "L"], //10^1, 5 * 10^1
-    ["C", "D"], //10^2, 5 * 10^2
-    ["M"] //10^3
-  ];
-  var str = num
-    .toString()
-    .split("")
-    .reverse();
-  var finalStr = "";
-
-  //loop through each digit, starting with the ones place
-  for (var i = 0; i < str.length; i++) {
-    //Make a roman numeral that ignores 5 multiples & shortening rules
-    finalStr = romans[i][0].repeat(str[i]) + finalStr;
-
-    //Check for a roman numeral 5-multiple version
-    if (romans[i][1]) {
-      //Change occurrences of 5 * 10^i to the corresponding 5-multiple Roman numeral
-      finalStr = finalStr
-        .replace(
-          romans[i][1] + romans[i][0].repeat(4),
-          romans[i][0] + romans[i + 1][0]
-        )
-        //shorten occurrences of 4 * 10^i
-        .replace(romans[i][0].repeat(4), romans[i][0] + romans[i][1]);
-    }
-  }
-  return finalStr;
-}
-
-function decimalToRoman(num) {
-  var romans = [["I", "V"], ["X", "L"], ["C", "D"], ["M"]];
-  var str = num
-    .toString()
-    .split("")
-    .reverse();
-  var final = "";
-  for (var i = 0; i < str.length; i++) {
-    if (str[i] > 5 && romans[i][1]) {
-      final = romans[i][1] + final;
-      str[i] -= 5;
-    }
-    if (str[i] > 0) {
-      final = romans[i][0].repeat(str[i]) + final;
-    }
-  }
-  return final;
 }
 
 console.log(decimalToRoman(36));
