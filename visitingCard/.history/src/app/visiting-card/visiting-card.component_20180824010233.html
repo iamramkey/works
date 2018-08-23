@@ -1,0 +1,60 @@
+<div class="container-fluid card">
+    <div class="row">
+        <div class="col-xs-5 card__left">
+            <div class="card__top__bar"></div>
+            <div class="card__middle__content">
+                <div class="card__image__info">
+                    <div class="card__image">
+                        <span class="glyphicon glyphicon-envelope"></span>
+                    </div>
+                    <div class="card__info">
+                        <p><a href="mailto:{{cardDetails?.userEmail?.toString() | lowercase }}?Subject=Hello%20{{ cardDetails?.userEmail?.toString()?.split('.')[0] }}"
+                                target="_top">{{ cardDetails?.userEmail?.toString() | lowercase }}</a></p>
+                        <p><a href="{{cardDetails?.website?.toString() | lowercase }}" target="_blank">{{cardDetails?.website?.toString()
+                                | lowercase }}</a></p>
+                    </div>
+                </div>
+                <div class="card__image__info">
+                    <div class="card__image">
+                        <span class="glyphicon glyphicon-earphone"></span>
+                    </div>
+                    <div class="card__info">
+                        <p><a href="tel:{{ cardDetails?.userPhone }}"><strong>Mobile:</strong> {{cardDetails?.userPhoneFormatted}}
+                            </a></p>
+                        <p><a href="javascript:void(0)"><strong>Date of Birth:</strong> {{ cardDetails?.dateOfBirth }}</a></p>
+                    </div>
+                </div>
+                <div class="card__image__info">
+                    <div class="card__image">
+                        <span class="glyphicon glyphicon-home"></span>
+                    </div>
+                    <div class="card__info">
+                        <p><a href="javascript:void(0)">{{ cardDetails?.addressLine1 }}</a></p>
+                        <p><a href="javascript:void(0)">{{ cardDetails?.addressLine2 }}</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="card__bottom__bar"></div>
+        </div>
+        <div class="col-xs-7 card__right">
+            <div class="card__logo__container">
+                <div class="card__logo_name">
+                    <p>Iamramkey</p>
+                    <p>Creatives</p>
+                </div>
+                <div class="card__logo"></div>
+            </div>
+            <div class="card__name__container">
+                <div class="card__color__bar"></div>
+                <div class="card__name__holder">
+                    <h1>{{ cardDetails?.name | uppercase }}</h1>
+                    <h6>{{ cardDetails?.designation }}</h6>
+                </div>
+            </div>
+        </div>
+        <div class="card__call-to-action">
+            <span class="glyphicon glyphicon-pencil"></span>
+            <span class="glyphicon glyphicon-erase"></span>
+        </div>
+    </div>
+</div>

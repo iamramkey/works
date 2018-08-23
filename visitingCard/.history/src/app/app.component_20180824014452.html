@@ -1,0 +1,17 @@
+<app-header></app-header>
+<div class="container-fluid">
+    <div class="col-xs-6 col-xs-offset-3">
+        <label for="columnValue">Column Size:</label>
+        <input [(ngModel)]="x" id="columnValue" />
+        <label for="rowValue">Row Size:</label>
+        <input [(ngModel)]="x" id="rowValue" />
+    </div>
+</div>
+
+<div class="cards__list__container">
+    <div>
+        <div *ngFor="let card of cardsList" [ngClass]="'col-xs-' + (12/x)">
+            <visiting-card [inputData]="card"></visiting-card>
+        </div>
+    </div>
+</div>

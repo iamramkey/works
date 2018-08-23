@@ -1,0 +1,14 @@
+.cards__list__container {
+  overflow-x: auto;
+  overflow-y: visible;
+
+  & [class*="col-xs-"] {
+    margin-top: 1.5rem;
+  }
+}
+
+.input__value {
+  &:not(:first-child) {
+    margin-top: 1rem;
+  }
+}

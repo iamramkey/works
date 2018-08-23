@@ -1,0 +1,12 @@
+<app-header></app-header>
+<div class="container-fluid">
+    <div style="height: 200px;background-color:#ccc;">
+        Matrix Container
+    </div>
+</div>
+
+<div class="cards__list__container">
+    <div *ngFor="let card of cards?.slice(x * y)" [ngClass]="'col-xs-' + (12/x)">
+        <visiting-card [inputData]="card"></visiting-card>
+    </div>
+</div>

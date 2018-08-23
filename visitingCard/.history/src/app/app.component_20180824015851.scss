@@ -1,0 +1,21 @@
+@include "common-imports";
+
+.cards__list__container {
+  @include clearfix;
+
+  & [class*="col-xs-"] {
+    margin-top: 1.5rem;
+  }
+}
+
+.input__value {
+  &:not(:first-child) {
+    margin-top: 1rem;
+  }
+}
+
+.each__card__container {
+  float: left;
+  box-sizing: border-box;
+  padding: 0.75rem;
+}
