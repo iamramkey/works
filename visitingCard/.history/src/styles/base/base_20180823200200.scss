@@ -1,0 +1,14 @@
+::selection {
+  background-color: $color-primary;
+  color: $color-white;
+}
+
+html {
+  //this defines what 1 rem is
+  font-size: 62.5%; //1rem = 10px
+}
+
+body {
+  box-sizing: border-box;
+  padding: 3rem;
+}

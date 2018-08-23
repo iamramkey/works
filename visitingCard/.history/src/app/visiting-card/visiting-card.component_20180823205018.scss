@@ -1,0 +1,49 @@
+@import "~styles/common-imports";
+
+.card {
+  height: 30rem;
+
+  &__left {
+  }
+
+  &__right {
+  }
+
+  &__logo__container {
+    height: 5rem;
+    position: relative;
+    @include clearfix;
+  }
+
+  &__logo {
+    height: 100%;
+    position: relative;
+    border: 1px solid $color-primary;
+    width: 5rem;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 1.2rem;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 80%;
+      height: 1.3rem;
+      border-top: 1px solid $color-primary;
+      border-bottom: 1px solid $color-primary;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 1.2rem;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 80%;
+      height: 1px;
+      background-color: $color-primary;
+    }
+  }
+}

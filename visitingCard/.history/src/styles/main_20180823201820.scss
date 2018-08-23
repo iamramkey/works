@@ -1,0 +1,45 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+@import "common-imports";
+
+@import "base/base";
+
+.navbar-brand {
+  padding: 0px;
+}
+.navbar-brand > img {
+  height: 100%;
+  padding: 15px;
+  width: auto;
+}
+
+.navbar-brand > img {
+  padding: 7px 15px;
+}
+
+.navbar-toggle {
+  z-index: 1;
+}
+
+/* CSS Transform Align Navbar Brand Text ... This could also be achieved with table / table-cells */
+.navbar-alignit .navbar-header {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  height: 50px;
+}
+.navbar-alignit .navbar-brand {
+  top: 50%;
+  display: block;
+  position: relative;
+  height: auto;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.navbar-nav > li > .dropdown-menu {
+  z-index: 9999;
+}

@@ -1,0 +1,23 @@
+@import "~styles/common-imports";
+
+.card {
+  height: 30rem;
+
+  &__left {
+  }
+
+  &__right {
+  }
+
+  &__logo__container {
+    height: 5rem;
+    position: relative;
+  }
+
+  &__logo {
+    height: 100%;
+    position: relative;
+    border: 1px solid $color-primary;
+    width: 5rem;
+  }
+}
