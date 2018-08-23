@@ -1,0 +1,65 @@
+# VisitingCard
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.6.
+
+## Development server
+
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Code scaffolding
+
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
+
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+
+## Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Before running the tests make sure you are serving the app via `ng serve`.
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+In order to load default data in each score card, you can maintain one .json file with 20 visiting card details.
+
+So render max of 20 cards in the UI irrespective of the user inputs i.e row & column counts.
+If user enter 3 x 4, then you have to render 12 cards
+If user enter 8 x 9, then you can render 20 cards.
+
+ 
+Do the below sample code send the code . We will review and let you know to proceed further
+
+Assume that there are R x C visiting cards. (R - no.of rows, C - no.of columns)
+User should be prompted with rows count and columns count. Based on user inputs, you have to render visiting cards.
+Eg: Rows = 2, Columns = 3 then you should show total six visiting cards to the user.
+
+So each visiting card should contain below fields:
+ - Name
+ - Email
+ - Address field
+ - DOB
+ - Designation
+ - Phone number
+
+And each visiting card should contain below controls:
+ - Edit icon
+ - Delete icon
+
+By default each visiting card must be non-editable. On clicking on edit icon of visiting card, it should be ready for editing (Inline editing).
+Once we click on submit button (this button will be visible when the card is in edit mode), then card should be back to normal mode (non-editable mode).
+
+Must follow:
+ - Use bootstrap for styling
+ - Follow good coding standards, naming conventions
+ - Use best of your choice for colors, fonts and look and feel
+
+Regards,
+Anjenaya Raju
