@@ -138,7 +138,7 @@ function decimalToRoman(num) {
       .replace(romans[i][0].repeat(4), romans[i][0] + romans[i][1])
       .replace(romans[i][1].repeat(2), romans[i + 1][0]); */
     let str1 = "";
-    if (str[i] >= 5 && romans[i][1]) {
+    if (str[i] > 5 && romans[i][1]) {
       str1 += romans[i][1];
       str[i] -= 5;
     }
@@ -146,13 +146,12 @@ function decimalToRoman(num) {
       str1 += romans[i][0].repeat(str[i]);
     }
     final = str1 + final;
-    if (romans[i + 1] instanceof Array) {
-      final = final.replace(
+    final = final
+      .replace(
         romans[i][1] + romans[i][0].repeat(4),
         romans[i][0] + romans[i + 1][0]
-      );
-    }
-    final = final.replace(romans[i][0].repeat(4), romans[i][0] + romans[i][1]);
+      )
+      .replace(romans[i][0].repeat(4), romans[i][0] + romans[i][1]);
   }
 
   return final;
@@ -161,13 +160,13 @@ function decimalToRoman(num) {
 console.log(decimalToRoman(34));
 console.log(decimalToRoman(108));
 
-console.log(decimalToRoman(8)); // returns 'VIII'
-console.log(decimalToRoman(5)); // returns 'V'
-console.log(decimalToRoman(3)); // returns 'III'
-console.log(decimalToRoman(4)); // returns 'IIII'
-console.log(decimalToRoman(9)); // returns 'VIIII'
-console.log(decimalToRoman(123)); //returns "CXXIII"
-console.log(decimalToRoman(3290)); // returns "MMMCCXC"
-console.log(decimalToRoman(777)); // returns "DCCLXXVII"
-console.log(decimalToRoman(949)); // returns "CMXLIX"
-console.log(decimalToRoman(2000)); // returns "MM"
+decimalToRoman(8); // returns 'VIII'
+decimalToRoman(5); // returns 'V'
+decimalToRoman(3); // returns 'III'
+decimalToRoman(4); // returns 'IIII'
+decimalToRoman(9); // returns 'VIIII'
+decimalToRoman(123); //returns "CXXIII"
+decimalToRoman(3290); // returns "MMMCCXC"
+decimalToRoman(777); // returns "DCCLXXVII"
+decimalToRoman(949); // returns "CMXLIX"
+decimalToRoman(2000); // returns "MM"

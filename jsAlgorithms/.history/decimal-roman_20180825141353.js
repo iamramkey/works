@@ -138,7 +138,7 @@ function decimalToRoman(num) {
       .replace(romans[i][0].repeat(4), romans[i][0] + romans[i][1])
       .replace(romans[i][1].repeat(2), romans[i + 1][0]); */
     let str1 = "";
-    if (str[i] >= 5 && romans[i][1]) {
+    if (str[i] > 5 && romans[i][1]) {
       str1 += romans[i][1];
       str[i] -= 5;
     }
