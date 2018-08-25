@@ -1,0 +1,15 @@
+POST http://localhost:3000/rama/rama/?rama=sampat
+Content-Type: application/json
+
+{
+  "payload" : 1,
+  "payload2" : true,
+  "payload3" : "string payload",
+  "payload4" : null,
+  "payload5" : undefined,
+  "payload6" : ["string array",1,2,3,4,5,6],
+  "payload7" : {
+    "key1" : "value1",
+    "key2" : "value2"
+  }
+}

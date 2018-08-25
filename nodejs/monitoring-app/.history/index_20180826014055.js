@@ -57,40 +57,22 @@ var server = http.createServer(function(req, res) {
 		//here the request data stream is reached the server and completed
 		//we need to send the response back to the user using response object & print out the incoming request information
 
-		// Choose the handler this request should go to.
-		// If one is not found, Use the notfound handler
-		var chosenHandler =
-			typeof router[trimmedPath] === Function
-				? router[trimmedPath]
-				: handlers[notFoundURLString];
-		// Construct the data object to send to the handler
-		var data = {
-			path,
+		//send the response
+		res.end('Hello World /n');
+
+		//log the request path user is asking for
+		console.log(
+			'Request recieved for path : ',
 			trimmedPath,
-			queryStringObject,
+			' using method : ',
 			method,
+			' with query parameters ',
+			queryStringObject,
+			' with headers ',
 			headers,
-			payload: buffer
-		};
-
-		// Route the request to the handler specified in the router
-		chosenHandler(data, function(statusCode, payload) {
-			// Use the statuscode called back by the handler, or default to 200
-			statusCode = typeof statusCode === 'number' ? statusCode : 200;
-
-			// Use the payload called by the handler, or default to an empty object
-			payload = typeof payload === 'object' ? payload : {};
-
-			// Convert the payload to a string
-			var payloadString = JSON.stringify(payload);
-
-			// Return the response
-			res.writeHead(statusCode);
-			res.end(payloadString);
-
-			//log the request path user is asking for
-			console.log('Returning this response: '.statusCode, payloadString);
-		});
+			' with payload : ',
+			buffer
+		);
 	});
 });
 
@@ -101,17 +83,10 @@ server.listen(3000, function() {
 
 //Defind the request handlers
 var handlers = {};
-headers.sample = function(data, callback) {
-	// Callback a http status code, and a payload object
-	callback(406, {
-		name: 'sample handler response'
-	});
-};
+headers.sample = function(data, callback) {};
 
 //define a not found handler
-handlers[notFoundURLString] = function(data, callback) {
-	callback(404);
-};
+handlers[notFoundURLString] = function(data, callback) {};
 
 //Define a request router
 

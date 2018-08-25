@@ -1,0 +1,4 @@
+POST http://localhost:3000/rama/rama/?rama=sampat
+Content-Type: application/json
+
+"string body which is being sent to server"
