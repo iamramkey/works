@@ -25,6 +25,11 @@ var server = http.createServer(function(req, res) {
 	* REGEX pattern
 	*/
 	var trimmedPath = path.replace(/^\/+|\/+$/g, '');
+	console.log(
+		`original path request for is : ${trimmedPath} and typeof router[trimmedPath] is : ${typeof router[
+			trimmedPath
+		]}`
+	);
 
 	//get the query string as an object
 	var queryStringObject = parsedURL.query;
@@ -60,7 +65,7 @@ var server = http.createServer(function(req, res) {
 		// Choose the handler this request should go to.
 		// If one is not found, Use the notfound handler
 		var chosenHandler =
-			router[trimmedPath] instanceof Function
+			typeof router[trimmedPath] === Function
 				? router[trimmedPath]
 				: handlers[notFoundURLString];
 		// Construct the data object to send to the handler

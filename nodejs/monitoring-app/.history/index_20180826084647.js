@@ -60,7 +60,7 @@ var server = http.createServer(function(req, res) {
 		// Choose the handler this request should go to.
 		// If one is not found, Use the notfound handler
 		var chosenHandler =
-			router[trimmedPath] instanceof Function
+			typeof router[trimmedPath] === Function
 				? router[trimmedPath]
 				: handlers[notFoundURLString];
 		// Construct the data object to send to the handler
@@ -89,7 +89,7 @@ var server = http.createServer(function(req, res) {
 			res.end(payloadString);
 
 			//log the request path user is asking for
-			console.log('Returning this response: ', statusCode, payloadString);
+			console.log('Returning this response: '.statusCode, payloadString);
 		});
 	});
 });
