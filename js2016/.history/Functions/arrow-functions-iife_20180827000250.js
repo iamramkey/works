@@ -13,10 +13,11 @@
   2. by limiting arrow functions to execute the code with single this value,  javascript engines can more easily optimize these operations
   */
 
-var IIFEOfArrowFunction = (str => {
-	return {
-		name: str
-	};
-})('rama');
+
+var IIFEOfArrowFunction = (str) => {
+  return {
+    name : str
+  };
+}('rama');
 
 console.log(IIFEOfArrowFunction);
