@@ -15,6 +15,3 @@ console.log(typeof myFunction); // this will print "undefined" if it is in stric
 //doc It is considered as a best practise to avoid a function declaration in a block
 //doc just to get rid this issues ES5 strict mode introduced an error whenever a function is declared inside a block
 // doc but in ES6 it does not give you any error under strict mode
-
-// doc block level functions are similiar to let function expressions. Function definition is removed once the exectution is out of that block in which it is defined
-// doc function declarations are hoisted / moved to the top of the script in the compilation phase where are function expressions are declarations and known to compiler only in the run time so they only exist in that scope/block according to their declaration
