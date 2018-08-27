@@ -38,13 +38,13 @@ let dosth = {
 Object.setPrototypeOf(dosth, person);
 console.log('dosth parent friend', dosth.sayHi());
 console.log(
-	'Object.getPrototypeOf(dosth) === person',
+	'Object.getPrototypeOf(friend) === person',
 	Object.getPrototypeOf(dosth) === person
 ); // true
 
 Object.setPrototypeOf(dosth, dog);
 console.log('dosth parent dog', dosth.sayHi());
 console.log(
-	'Object.getPrototypeOf(dosth) === dog',
+	'Object.getPrototypeOf(friend) === dog',
 	Object.getPrototypeOf(dosth) === dog
 ); // true

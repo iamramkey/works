@@ -27,24 +27,3 @@ console.log(Object.getPrototypeOf(friend) === person); // true
 Object.setPrototypeOf(friend, dog);
 console.log(friend.sayHi()); // WaaW!
 console.log(Object.getPrototypeOf(friend) === person); // false
-
-let dosth = {
-	sayHi() {
-		//return Object.getPrototypeOf(this).sayHi.call(this) + ' dosth'; // ES6 simplified this implemenatation and written below
-		return super.sayHi() + ' super dosth';
-	}
-};
-
-Object.setPrototypeOf(dosth, person);
-console.log('dosth parent friend', dosth.sayHi());
-console.log(
-	'Object.getPrototypeOf(dosth) === person',
-	Object.getPrototypeOf(dosth) === person
-); // true
-
-Object.setPrototypeOf(dosth, dog);
-console.log('dosth parent dog', dosth.sayHi());
-console.log(
-	'Object.getPrototypeOf(dosth) === dog',
-	Object.getPrototypeOf(dosth) === dog
-); // true
