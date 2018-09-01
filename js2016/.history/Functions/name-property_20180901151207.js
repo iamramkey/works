@@ -25,3 +25,24 @@ var descriptor = Object.getOwnPropertyDescriptor(person, 'firstname');
 console.log(descriptor.get.name); // "get firstName"
 
 console.log(myFunction1.bind().name); // "bound myFunction1 "
+
+
+class InnerHTMLModifier{
+	
+	constructor(element){
+		this.element = element;
+	}
+	get html{
+		return this.element.innerHTML;
+	}
+
+	set html(str){
+		this.element.innerHTML = str;
+	}
+}
+
+let descriptor = Object.getOwnPropertyDescriptor(InnerHTMLModifier, 'html');
+
+console.log(`TCL: 'get' in descriptor`, 'get' in descriptor);
+console.log(`TCL: 'set' in descriptor`, 'set' in descriptor);
+console.log('TCL: descriptor.enumerable', descriptor.enumerable);
