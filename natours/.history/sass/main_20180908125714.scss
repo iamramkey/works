@@ -31,3 +31,20 @@ Dark green: #28b485
 @import 'layout/grid';
 
 @import 'pages/home';
+
+#somu {
+	background-color: #f60;
+	width: 100%;
+	height: 200px;
+	text-align: center;
+
+	& .balaji {
+		& .karthik {
+			& .rama {
+				display: inline-block;
+				padding: 1rem 2rem;
+				font-size: 1rem;
+			}
+		}
+	}
+}
