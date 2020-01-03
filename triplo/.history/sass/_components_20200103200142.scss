@@ -1,29 +1,23 @@
-////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
 // LOGO
+
 .logo {
 	height: 3.25rem;
 	margin-left: 2rem;
 }
 
-////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
 // SEARCH
 .search {
 	flex: 0 0 40%;
 
 	display: flex;
-	align-items: center;
 	justify-content: center;
-
-	@media only screen and (max-width: $bp-smallest) {
-		order: 1;
-		flex: 0 0 100%;
-		background-color: var(--color-grey-light-2);
-	}
+	align-items: center;
 
 	&__input {
 		font-family: inherit;
 		font-size: inherit;
-		color: inherit;
 		background-color: var(--color-grey-light-2);
 		border: none;
 		padding: 0.7rem 2rem;
@@ -33,9 +27,9 @@
 		margin-right: -3.25rem;
 
 		&:focus {
+			background-color: var(--color-grey-light-3);
 			outline: none;
 			width: 100%;
-			background-color: var(--color-grey-light-3);
 		}
 
 		&::-webkit-input-placeholder {
@@ -64,17 +58,16 @@
 	&__icon {
 		height: 2rem;
 		width: 2rem;
-		fill: var(--color-grey-dark-3);
+		fill: var(-color-grey-dark-3);
 	}
 }
 
-////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
 // USER NAVIGATION
 .user-nav {
-	align-self: stretch;
-
 	display: flex;
 	align-items: center;
+	align-self: stretch;
 
 	& > * {
 		padding: 0 2rem;
@@ -104,14 +97,16 @@
 		width: 1.75rem;
 		border-radius: 50%;
 		background-color: var(--color-primary);
-		color: #fff;
+		color: #ffffff;
 		position: absolute;
 		top: 1.5rem;
 		right: 1.1rem;
-
 		display: flex;
-		justify-content: center;
 		align-items: center;
+		justify-content: center;
+	}
+
+	&__user {
 	}
 
 	&__user-photo {
@@ -119,33 +114,24 @@
 		border-radius: 50%;
 		margin-right: 1rem;
 	}
+
+	&__user-name {
+	}
 }
 
-////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
 // SIDE NAVIGATION
+
 .side-nav {
 	font-size: 1.4rem;
-	list-style: none;
+	list-style-type: none;
 	margin-top: 3.5rem;
-
-	@media only screen and (max-width: $bp-medium) {
-		display: flex;
-		margin: 0;
-	}
 
 	&__item {
 		position: relative;
 
 		&:not(:last-child) {
 			margin-bottom: 0.5rem;
-
-			@media only screen and (max-width: $bp-medium) {
-				margin: 0;
-			}
-		}
-
-		@media only screen and (max-width: $bp-medium) {
-			flex: 1;
 		}
 	}
 
@@ -168,7 +154,7 @@
 		width: 100%;
 	}
 
-	&__item:active::before {
+	&__item:active:before {
 		background-color: var(--color-primary-light);
 	}
 
@@ -179,21 +165,15 @@
 		text-transform: uppercase;
 		display: block;
 		padding: 1.5rem 3rem;
-		position: relative;
-		z-index: 10;
 
 		display: flex;
 		align-items: center;
+		position: relative;
+		z-index: 10;
+	}
 
-		@media only screen and (max-width: $bp-medium) {
-			justify-content: center;
-			padding: 2rem;
-		}
-
-		@media only screen and (max-width: $bp-small) {
-			flex-direction: column;
-			padding: 1.5rem 0.5rem;
-		}
+	&__link:link:hover {
+		color: orangered;
 	}
 
 	&__icon {
@@ -201,31 +181,22 @@
 		height: 1.75rem;
 		margin-right: 2rem;
 		fill: currentColor;
-
-		@media only screen and (max-width: $bp-small) {
-			margin-right: 0;
-			margin-bottom: 0.7rem;
-			width: 1.5rem;
-			height: 1.5rem;
-		}
 	}
 }
 
-////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
 // LEGAL TEXT
+
 .legal {
 	font-size: 1.2rem;
-	color: var(--color-grey-light-4);
 	text-align: center;
 	padding: 2.5rem;
-
-	@media only screen and (max-width: $bp-medium) {
-		display: none;
-	}
+	color: var(--color-grey-light-4);
 }
 
-////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
 // GALLERY
+
 .gallery {
 	display: flex;
 
@@ -235,7 +206,7 @@
 	}
 }
 
-////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
 // HOTEL OVERVIEW
 .overview {
 	display: flex;
@@ -243,19 +214,15 @@
 	border-bottom: var(--line);
 
 	&__heading {
-		font-size: 2.25rem;
+		font-size: 2.5rem;
 		font-weight: 300;
 		text-transform: uppercase;
 		letter-spacing: 1px;
 		padding: 1.5rem 3rem;
-
-		@media only screen and (max-width: $bp-small) {
-			font-size: 1.8rem;
-			padding: 1.25rem 2rem;
-		}
 	}
 
 	&__stars {
+		// flex: 1;
 		margin-right: auto;
 		display: flex;
 	}
@@ -268,9 +235,10 @@
 	}
 
 	&__location {
+		// flex: 1;
 		font-size: 1.2rem;
 		display: flex;
-		vertical-align: center;
+		align-items: center;
 	}
 
 	&__icon-location {
@@ -279,65 +247,44 @@
 
 	&__rating {
 		background-color: var(--color-primary);
-		color: #fff;
 		margin-left: 3rem;
+		color: #fff;
 		padding: 0 2.25rem;
 		align-self: stretch;
-
 		display: flex;
-		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-
-		@media only screen and (max-width: $bp-small) {
-			padding: 0 1.5rem;
-		}
+		flex-direction: column;
 	}
 
 	&__rating-average {
 		font-size: 2.25rem;
 		font-weight: 300;
 		margin-bottom: -3px;
-
-		@media only screen and (max-width: $bp-small) {
-			font-size: 1.8rem;
-		}
 	}
 
 	&__rating-count {
 		font-size: 0.8rem;
 		text-transform: uppercase;
-
-		@media only screen and (max-width: $bp-small) {
-			font-size: 0.5rem;
-		}
 	}
 }
 
-////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
 // BUTTON INLINE
+
 .btn-inline {
 	border: none;
 	color: var(--color-primary);
 	font-size: inherit;
 	border-bottom: 1px solid currentColor;
 	padding-bottom: 2px;
-	display: inline-block;
+	display: inline;
 	background-color: transparent;
 	cursor: pointer;
 	transition: all 0.2s;
 
-	& span {
-		margin-left: 3px;
-		transition: margin-left 0.2s;
-	}
-
 	&:hover {
 		color: var(--color-grey-dark-1);
-
-		span {
-			margin-left: 8px;
-		}
 	}
 
 	&:focus {
@@ -363,13 +310,14 @@
 	}
 }
 
-////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
 // PARAGRAPH
+
 .paragraph:not(:last-of-type) {
 	margin-bottom: 2rem;
 }
 
-////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
 // LIST
 .list {
 	list-style: none;
@@ -384,32 +332,35 @@
 	&__item {
 		flex: 0 0 50%;
 		margin-bottom: 0.7rem;
-	}
 
-	&__item::before {
-		content: '';
-		display: inline-block;
-		height: 1rem;
-		width: 1rem;
-		margin-right: 0.7rem;
+		&::before {
+			content: '';
+			display: inline-block;
+			width: 1rem;
+			height: 1rem;
+			margin-right: 0.7rem;
 
-		// Older browsers
-		background-image: url(../img/chevron-thin-right.svg);
-		background-size: cover;
+			// older browsers
+			// background-image: url(../img/chevron-thin-right.svg);
+			// background-size: cover;
 
-		//Newer browsers - masks
-		@supports (-webkit-mask-image: url()) or (mask-image: url()) {
+			// Newer browsers : masks
 			background-color: var(--color-primary);
 			-webkit-mask-image: url(../img/chevron-thin-right.svg);
 			-webkit-mask-size: cover;
+			-moz-mask-image: url(../img/chevron-thin-right.svg);
+			-moz-mask-size: cover;
+			-o-mask-image: url(../img/chevron-thin-right.svg);
+			-o-mask-size: cover;
+			-ms-mask-image: url(../img/chevron-thin-right.svg);
+			-ms-mask-size: cover;
 			mask-image: url(../img/chevron-thin-right.svg);
 			mask-size: cover;
-			background-image: none;
 		}
 	}
 }
 
-////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
 // RECOMMEND
 .recommend {
 	font-size: 1.3rem;
@@ -423,162 +374,17 @@
 	}
 
 	&__friends {
-		display: flex;
 	}
 
 	&__photo {
-		box-sizing: content-box;
 		height: 4rem;
 		width: 4rem;
 		border-radius: 50%;
-		border: 3px solid #fff;
+		box-sizing: content-box;
 
 		&:not(:last-child) {
-			margin-right: -2rem;
+			margin-right: -1.5rem;
+			border: 3px solid #fff;
 		}
-	}
-}
-
-////////////////////////////////////////
-// REVIEWS
-.review {
-	background-color: #fff;
-	box-shadow: var(--shadow-light);
-	padding: 3rem;
-	margin-bottom: 3.5rem;
-	position: relative;
-	overflow: hidden;
-
-	@media only screen and (max-width: $bp-medium) {
-		padding: 2rem;
-		margin-bottom: 3rem;
-	}
-
-	&__text {
-		margin-bottom: 2rem;
-		z-index: 10;
-		position: relative;
-	}
-
-	&__user {
-		display: flex;
-		align-items: center;
-	}
-
-	&__photo {
-		height: 4.5rem;
-		width: 4.5rem;
-		border-radius: 50%;
-		margin-right: 1.5rem;
-	}
-
-	&__user-box {
-		margin-right: auto;
-	}
-
-	&__user-name {
-		font-size: 1.1rem;
-		font-weight: 600;
-		text-transform: uppercase;
-		margin-bottom: 0.4rem;
-	}
-
-	&__user-date {
-		font-size: 1rem;
-		color: var(--color-grey-dark-3);
-	}
-
-	&__rating {
-		color: var(--color-primary);
-		font-size: 2.2rem;
-		font-weight: 300;
-	}
-
-	&::before {
-		content: '\201C';
-		position: absolute;
-		top: -2.75rem;
-		left: -1rem;
-		line-height: 1;
-		font-size: 20rem;
-		color: var(--color-grey-light-2);
-		font-family: sans-serif;
-		z-index: 1;
-	}
-}
-
-////////////////////////////////////////
-// CALL TO ACTION
-.cta {
-	padding: 3.5rem 0;
-	text-align: center;
-
-	@media only screen and (max-width: $bp-medium) {
-		padding: 2.5rem 0;
-	}
-
-	&__book-now {
-		font-size: 2rem;
-		font-weight: 300;
-		text-transform: uppercase;
-		margin-bottom: 2.5rem;
-	}
-}
-
-////////////////////////////////////////
-// CALL TO ACTION
-.btn {
-	font-size: 1.5rem;
-	font-weight: 300;
-	text-transform: uppercase;
-	border-radius: 100px;
-	border: none;
-	background-image: linear-gradient(
-		to right,
-		var(--color-primary-light),
-		var(--color-primary-dark)
-	);
-	color: #fff;
-	position: relative;
-	overflow: hidden;
-	cursor: pointer;
-
-	& > * {
-		display: inline-block;
-		height: 100%;
-		width: 100%;
-		transition: all 0.2s;
-	}
-
-	&__visible {
-		padding: 2rem 7.5rem;
-	}
-
-	&__invisible {
-		position: absolute;
-		padding: 2rem 0;
-		left: 0;
-		top: -100%;
-	}
-
-	&:hover {
-		background-image: linear-gradient(
-			to left,
-			var(--color-primary-light),
-			var(--color-primary-dark)
-		);
-	}
-
-	&:hover &__visible {
-		transform: translateY(100%);
-	}
-
-	&:hover &__invisible {
-		top: 0;
-	}
-
-	&:focus {
-		outline: none;
-		animation: pulsate 1s infinite;
 	}
 }
